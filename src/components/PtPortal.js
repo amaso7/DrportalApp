@@ -23,7 +23,7 @@ function PtPortal(props) {
   
   const handlePtSave = () => {
     
-    fetch('http://localhost:5000/api/Pts', {
+    fetch('https://drportalazure.herokuapp.com/api/Pts', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
@@ -41,7 +41,7 @@ function PtPortal(props) {
         <p>**For exsisting patients only** if you are a new patient please call us at (678) 799-9277 to set up a new patient appointment.</p>
         <img src="https://findicons.com/files/icons/2837/health/128/doctor_icon.png" alt="" />
         </header>
-        <a className ="hlink" href = '/'>Home</a>
+        <a className ="hlink" href = 'https://azureforhealthportal.surge.sh/'>Home</a>
         
         <form id="ptPortal">
           <input name="name" onChange={handlePtChange} type="textbox" placeholder="Full Name" />
