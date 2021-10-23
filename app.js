@@ -9,7 +9,7 @@ const router=express.Router()
 const bcrypt = require('bcrypt')
 
 app.use(express.urlencoded())
-const PORT = process.env.PORT || 80
+const PORT = process.env.PORT || 5000
 
 /*
 const pgp = require('pg-promise')()
