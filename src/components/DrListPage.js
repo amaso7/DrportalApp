@@ -22,7 +22,7 @@ function DrListPage() {
         </header>
         <body>  
         <a className ="buttondr"href="https://rx7.drfirst.com/login.jsp"><button>Rx Portal </button></a>
-        <a className ="hlink" href = '/'>Home</a>
+        <a className ="hlink" href = 'https://azureforhealthportal.surge.sh/the/'>Home</a>
         </body>
       <p>{fetchPts}</p>
       
