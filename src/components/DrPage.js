@@ -7,7 +7,7 @@ import PtPortal from './PtPortal';
 function DrPage(props) {
 
    const viewAllpts = (pt) => {
-    fetch(`http://localhost:PORT/api/pts/`, {
+    fetch(`https://drportalazure.herokuapp.com/api/pts/`, {
          method: 'GET'
        }).then(response => response.json())
        .then(res => { 
