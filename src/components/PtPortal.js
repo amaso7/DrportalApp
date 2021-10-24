@@ -23,7 +23,8 @@ function PtPortal(props) {
   
   const handlePtSave = () => {
     
-    fetch('https://drportalazure.herokuapp.com/api/Pts', {
+    fetch('    fetch(`https://shrouded-reaches-94589.herokuapp.com/api/pts/`, 
+          { 
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
