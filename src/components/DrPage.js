@@ -8,7 +8,6 @@ function DrPage(props) {
 
    const viewAllpts = (pt) => {
     fetch(`https://shrouded-reaches-94589.herokuapp.com/api/pts/`, {
-/api/pts/`, {
          method: 'GET'
        }).then(response => response.json())
        .then(res => { 
