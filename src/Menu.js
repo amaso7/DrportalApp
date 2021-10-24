@@ -7,9 +7,9 @@ function Menu() {
         <div className = "menu">
             <h3>Main Menu</h3>
                 
-                <a  href = 'https://azureforhealthportal.surge.sh/DrListPage'>Dr Login</a>
-                <a href = 'https://azureforhealthportal.surge.sh/PtPrograms'>Patient resources</a>
-                <a  href = 'https://azureforhealthportal.surge.sh/PtPortal'>Patient Portal</a>
+                <a  href = '/DrListPage'>Dr Login</a>
+                <a href = '/PtPrograms'>Patient resources</a>
+                <a  href = '/PtPortal'>Patient Portal</a>
                 
         </div>
         
