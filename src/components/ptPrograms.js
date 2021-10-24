@@ -12,7 +12,7 @@ const PtPrograms = () => {
             </header>
         </div>
         <form></form>
-        <a className="hlink" href='https://azureforhealthportal.surge.sh/'>Home</a></><><a className="crisissite" href='https://www.georgiacollaborative.com/providers/georgia-crisis-and-access-line-gcal/'>GA crisis And Access Line(GCAL)</a></></><a className="hotline" href='https://suicidepreventionlifeline.org/'>National Suicide Prevention Lifeline</a></>
+        <a className="hlink" href='/'>Home</a></><><a className="crisissite" href='https://www.georgiacollaborative.com/providers/georgia-crisis-and-access-line-gcal/'>GA crisis And Access Line(GCAL)</a></></><a className="hotline" href='https://suicidepreventionlifeline.org/'>National Suicide Prevention Lifeline</a></>
     )
 }
 export default (PtPrograms)
