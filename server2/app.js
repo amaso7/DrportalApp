@@ -16,7 +16,7 @@ const connectionString = 'postgres://fxyqgzxg:i66ItBKFaiFO581GDTU_YGxpIDwbjsRQ@f
 
 
 
-app.post('https://drportalazure.herokuapp.com/api/Pts', (req, res)=>{
+app.post('/api/Pts', (req, res)=>{
     const name = req.body.name
     const dob = req.body.dob
     const provider = req.body.provider
@@ -43,7 +43,7 @@ app.post('https://drportalazure.herokuapp.com/api/Pts', (req, res)=>{
     })
 
 })
-app.get('https://drportalazure.herokuapp.com/api/pts', (req, res) => {
+app.get('/api/pts', (req, res) => {
 
     models.Pt.findAll({})
     .then(pts =>{
@@ -51,7 +51,7 @@ app.get('https://drportalazure.herokuapp.com/api/pts', (req, res) => {
     })
 })
 
-app.delete('https://drportalazure.herokuapp.com/api/pts/:ptId', (req, res) => {
+app.delete('/api/pts/:ptId', (req, res) => {
 
     const ptId = parseInt(req.params.ptId) 
 
@@ -64,7 +64,7 @@ app.delete('https://drportalazure.herokuapp.com/api/pts/:ptId', (req, res) => {
     })
 
 })
-router.post('https://drportalazure.herokuapp.com/login',(req,res)=>{
+router.post('/login',(req,res)=>{
     const username=req.body.username
     const password=req.body.password
 
@@ -81,7 +81,7 @@ router.post('https://drportalazure.herokuapp.com/login',(req,res)=>{
                     req.session.username=user.username
                 }
                 console.log("User successfully logged in! On user homepage")
-                res.redirect('https://drportalazure.herokuapp.com/users/home')
+                res.redirect('/users/home')
             }else{
                 
                 console.log("Invalid username or password")
@@ -93,6 +93,6 @@ router.post('https://drportalazure.herokuapp.com/login',(req,res)=>{
 
 
 //local host 5000
-app.listen('https://drportalazure.herokuapp.com', (req, res) => {
-    console.log('Server is running...')
-})
+app.listen(process.env.PORT || 5000, () => {
+    console.log("server running");
+  });
