@@ -10,9 +10,10 @@ function DrPortal() {
             <h3>About</h3>
             <button type= 'buttondr'link= "rcopia.com">rcopia login </button>
             <button href="rcopia.com"></button>
+                
+                <h3>Patient Messages</h3>
                 <ul>
-                    
-                    <button>button</button>
+                    {fetchPts}
                 </ul>
 
         </Nav>
