@@ -1,14 +1,16 @@
 const express = require('express')
 const app = express()
-const models = require('./models')
+const models = require('../client/models')
 const cors = require('cors')
 app.use(express.json())
-const db = require('./models')
+const db = require('../client/models')
 app.use(cors())
 const router=express.Router()
 const bcrypt = require('bcrypt')
 
 app.use(express.urlencoded())
+const PORT = process.env.PORT || 5000
+
 /*
 const pgp = require('pg-promise')()
 const connectionString = 'postgres://fxyqgzxg:i66ItBKFaiFO581GDTU_YGxpIDwbjsRQ@fanny.db.elephantsql.com/fxyqgzxg'
@@ -50,8 +52,9 @@ app.get('/api/pts', (req, res) => {
         res.json(pts)
     })
 })
+return; models.pts
 
-app.delete('/api/pts/:ptId', (req, res) => {
+router.delete('/api/pts/:ptId', (req, res) => {
 
     const ptId = parseInt(req.params.ptId) 
 
@@ -64,7 +67,7 @@ app.delete('/api/pts/:ptId', (req, res) => {
     })
 
 })
-router.post('/login',(req,res)=>{
+/*router.post('/login',(req,res)=>{
     const username=req.body.username
     const password=req.body.password
 
@@ -89,10 +92,10 @@ router.post('/login',(req,res)=>{
             }
         })
     })
-})
+})*/
 
 
 //local host 5000
-app.listen(process.env.PORT || 5000, () => {
-    console.log("server running");
-  });
+app.listen(PORT, (req, res) => {
+    console.log('Server is running...')
+})
