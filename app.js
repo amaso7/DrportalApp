@@ -10,7 +10,7 @@ const bcrypt = require('bcrypt')
 
 app.use(express.urlencoded())
 const PORT = process.env.PORT || 5000
-
+global.models = require('./models')
 /*
 const pgp = require('pg-promise')()
 const connectionString = 'postgres://fxyqgzxg:i66ItBKFaiFO581GDTU_YGxpIDwbjsRQ@fanny.db.elephantsql.com/fxyqgzxg'
