@@ -8,8 +8,8 @@ import axios from "axios"
 
 function DrListPage() {
     
- /* const fetchPts = (pt) => {
-    return axios.get("http://localhost:PORT/api/pts/")
+  const fetchPts = (pt) => {
+    return axios.get("https://drportalazure.herokuapp.com/api/pts/")
           .then((response) => console.log(response.data));}*/
 
   
