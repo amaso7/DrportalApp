@@ -45,7 +45,7 @@ app.post('/api/Pts', (req, res)=>{
     })
 
 })
-app.get('/api/pts', (req, res) => {
+route.get('/api/pts', (req, res) => {
 
     models.Pt.findAll({})
     .then(pts =>{
