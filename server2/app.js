@@ -7,7 +7,7 @@ const db = require('../client/models')
 app.use(cors())
 const router=express.Router()
 const bcrypt = require('bcrypt')
-
+global.models = require('./models')
 app.use(express.urlencoded())
 const PORT = process.env.PORT || 5000
 
