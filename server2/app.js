@@ -1,16 +1,17 @@
+var path = require('path')
 const express = require('express')
 const app = express()
-const models = require('../client/models')
+const models = require('./models')
 const cors = require('cors')
 app.use(express.json())
-const db = require('../client/models')
+const db = require('./models')
 app.use(cors())
 const router=express.Router()
 const bcrypt = require('bcrypt')
-global.models = require('./models')
+
 app.use(express.urlencoded())
 const PORT = process.env.PORT || 5000
-
+global.models = require('./models')
 /*
 const pgp = require('pg-promise')()
 const connectionString = 'postgres://fxyqgzxg:i66ItBKFaiFO581GDTU_YGxpIDwbjsRQ@fanny.db.elephantsql.com/fxyqgzxg'
@@ -27,7 +28,7 @@ app.post('/api/Pts', (req, res)=>{
     const meds = req.body.meds
     const num = req.body.num
     const msg = req.body.msg
-
+    
     const pt = models.Pt.build({
         name: name,
         dob: dob,
@@ -38,26 +39,25 @@ app.post('/api/Pts', (req, res)=>{
         num: num,  
         msg: msg
     })
-
+    
     pt.save()
     .then(savedPt => {
         res.json({success: true, ptId: savedPt.id})
     })
-
+    
 })
-app.get('/api/pts', (req, res) => {
-
+app.get('./api/pts', (req, res) => {
+    
     models.Pt.findAll({})
     .then(pts =>{
         res.json(pts)
     })
 })
-return; models.pts
 
-router.delete('/api/pts/:ptId', (req, res) => {
-
+app.delete('/api/pts/:ptId', (req, res) => {
+    
     const ptId = parseInt(req.params.ptId) 
-
+    
     models.Pt.destroy({
         where: {
             id: ptId
@@ -65,9 +65,9 @@ router.delete('/api/pts/:ptId', (req, res) => {
     }).then(deletedPt => {
         res.json({success: true})
     })
-
+    
 })
-/*router.post('/login',(req,res)=>{
+router.post('/login',(req,res)=>{
     const username=req.body.username
     const password=req.body.password
 
@@ -92,10 +92,12 @@ router.delete('/api/pts/:ptId', (req, res) => {
             }
         })
     })
-})*/
+})
 
+app.use(express.static(path.join(__dirname, 'client/build')));
 
 //local host 5000
 app.listen(PORT, (req, res) => {
     console.log('Server is running...')
 })
+module.exports=app
