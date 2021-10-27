@@ -53,7 +53,12 @@ app.get('./api/pts', (req, res) => {
         res.json(pts)
     })
 })
-
+app.get('./api/ptstest', (req, res) => {
+    
+     res.json({success: true, ptId: 'okay'})
+   
+   
+})
 app.delete('/api/pts/:ptId', (req, res) => {
     
     const ptId = parseInt(req.params.ptId) 
