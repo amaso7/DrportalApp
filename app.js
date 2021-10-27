@@ -17,7 +17,7 @@ global.models = require('./models')
 const pgp = require('pg-promise')()
 const connectionString = 'postgres://fxyqgzxg:i66ItBKFaiFO581GDTU_YGxpIDwbjsRQ@fanny.db.elephantsql.com/fxyqgzxg'
 */
-var usersRouter = require('./server2/app');
+var usersRouter = require('./server2/app.js');
 const store = new SequelizeStore({ db: models.sequelize })
 app.use(
     session({
