@@ -30,7 +30,7 @@ app.use(
    store.sync();
    app.use(express.json());
    app.use(express.urlencoded({ extended: false }));
-   app.use('/', indexRouter);
+   /*app.use('/', indexRouter);*/
 
 app.use('/api', usersRouter)
 app.get('*', (req, res) => {
